@@ -10,13 +10,18 @@ const apiIsLocal = ["localhost", "127.0.0.1", "[::1]"].includes(apiUrl.hostname)
 const isDev = process.env.NODE_ENV !== "production";
 const reverbScheme = process.env.NEXT_PUBLIC_REVERB_SCHEME === "https" ? "wss" : "ws";
 const reverbOrigin = `${reverbScheme}://${process.env.NEXT_PUBLIC_REVERB_HOST ?? "localhost"}:${process.env.NEXT_PUBLIC_REVERB_PORT ?? "8080"}`;
+// Pusher Channels (cPanel hosting): the browser talks to wss://ws-<cluster>.pusher.com. Only added when a key is set.
+const pusherCluster = process.env.NEXT_PUBLIC_PUSHER_APP_CLUSTER ?? "mt1";
+const pusherOrigins = process.env.NEXT_PUBLIC_PUSHER_APP_KEY
+  ? ` wss://ws-${pusherCluster}.pusher.com https://sockjs-${pusherCluster}.pusher.com`
+  : "";
 const csp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   `img-src 'self' data: blob: ${apiUrl.origin}`,
   "font-src 'self' data:",
-  `connect-src 'self' ${apiUrl.origin} ${reverbOrigin}`,
+  `connect-src 'self' ${apiUrl.origin} ${reverbOrigin}${pusherOrigins}`,
   "worker-src 'self'",
   "manifest-src 'self'",
   "object-src 'none'",
@@ -35,6 +40,8 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   /* config options here */
   poweredByHeader: false,
+  // Phase 14a: a self-contained build (.next/standalone) for cPanel / Passenger; see deploy-package.bat
+  output: "standalone",
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

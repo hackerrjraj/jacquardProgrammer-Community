@@ -16,7 +16,7 @@ import { apiFetch, type ChatConversation, type ChatMessageItem } from "@/lib/api
 import { fill } from "@/lib/auth";
 import { localizeDigits } from "@/lib/format";
 import { chatTime, UnavailableLabel } from "./chat-list";
-import { chatEcho, MESSAGE_EVENT, onChatLive, READ_EVENT, type ChatLiveMessage, type ChatLiveRead } from "./chat-live";
+import { chatEcho, MESSAGE_EVENT, onChatLive, pollWhileChatOpen, READ_EVENT, type ChatLiveMessage, type ChatLiveRead } from "./chat-live";
 import { LiveOffHint } from "./chat-live-hint";
 import { BlockDialog, ChatMenu, ReportDialog } from "./chat-safety";
 import { setChatUnread } from "./chat-unread";
@@ -159,9 +159,11 @@ function ChatThread({ id }: { id: number }) {
       if (e.type === "resync") void resync();
     });
     document.addEventListener("visibilitychange", onVisible);
+    const stopPolling = pollWhileChatOpen();
     return () => {
       echo?.leave(channel);
       off();
+      stopPolling();
       document.removeEventListener("visibilitychange", onVisible);
     };
   }, [id, me, ready]);

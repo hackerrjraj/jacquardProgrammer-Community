@@ -49,3 +49,6 @@ backend/bootstrap/cache/*.php
 Thumbs.db
 .vscode/
 .idea/
+
+# Deploy packages (Phase 14a)
+deploy/

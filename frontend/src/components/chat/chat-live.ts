@@ -5,8 +5,12 @@ import Pusher from "pusher-js";
 import { useSyncExternalStore } from "react";
 import { apiFetch, type CommitteeChatMessage } from "@/lib/api";
 
-// Live chat delivery over Reverb (Phase 9c). Extra on top of the 9b API screens: when the chat server is down or
-// reconnecting, everything still works through the API and the screens show a quiet "live updates off" hint.
+// Live chat delivery (Phase 9c, extended in 14a). Three modes, picked from the public env values at build time:
+//   1. Pusher Channels   - NEXT_PUBLIC_PUSHER_APP_KEY is set (cPanel hosting, no long-running server needed)
+//   2. Reverb            - NEXT_PUBLIC_REVERB_APP_KEY is set (local development)
+//   3. Polling           - neither is set: the screens re-load by themselves (30 s for counts, 5 s inside an open chat)
+// It is an extra on top of the API screens: when live delivery is down, everything still works through the API and
+// the screens show a quiet "live updates off" hint.
 
 export type ChatLiveMessage = {
   conversation_id: number;
@@ -25,7 +29,12 @@ export const COMMITTEE_READ_EVENT = ".committee_chat.read";
 /** New in-app notification (Phase 10a) on the same own channel — the bell reloads its count. */
 export const NOTIFICATION_EVENT = ".notification.new";
 
-const KEY = process.env.NEXT_PUBLIC_REVERB_APP_KEY;
+const PUSHER_KEY = process.env.NEXT_PUBLIC_PUSHER_APP_KEY;
+const PUSHER_CLUSTER = process.env.NEXT_PUBLIC_PUSHER_APP_CLUSTER ?? "mt1";
+const KEY = PUSHER_KEY || process.env.NEXT_PUBLIC_REVERB_APP_KEY;
+/** Polling fallback intervals (used only when neither Pusher nor Reverb is configured). */
+const POLL_COUNTS_MS = 30_000;
+const POLL_OPEN_CHAT_MS = 5_000;
 const HOST = process.env.NEXT_PUBLIC_REVERB_HOST ?? "localhost";
 const PORT = Number(process.env.NEXT_PUBLIC_REVERB_PORT ?? 8080);
 const TLS = process.env.NEXT_PUBLIC_REVERB_SCHEME === "https";
@@ -117,15 +126,21 @@ export function onNotificationLive(listener: () => void): () => void {
 /** The shared Echo connection (created on first use in the browser; null when not configured). */
 export function chatEcho(): Echo<"reverb"> | null {
   if (echo || !KEY || typeof window === "undefined") return echo;
+  const connection = PUSHER_KEY
+    ? { broadcaster: "pusher" as const, key: KEY, cluster: PUSHER_CLUSTER, forceTLS: true }
+    : {
+        broadcaster: "reverb" as const,
+        key: KEY,
+        wsHost: HOST,
+        wsPort: PORT,
+        wssPort: PORT,
+        forceTLS: TLS,
+        enabledTransports: ["ws", "wss"] as ("ws" | "wss")[],
+      };
+  // Pusher Channels and Reverb speak the same protocol; Echo's types just need one of the two names.
   const instance = new Echo<"reverb">({
-    broadcaster: "reverb",
+    ...(connection as Extract<typeof connection, { broadcaster: "reverb" }>),
     Pusher,
-    key: KEY,
-    wsHost: HOST,
-    wsPort: PORT,
-    wssPort: PORT,
-    forceTLS: TLS,
-    enabledTransports: ["ws", "wss"],
     // Channel login with the website's normal session (cookie + CSRF), same as every other API call.
     channelAuthorization: {
       endpoint: "",
@@ -154,11 +169,35 @@ export function chatEcho(): Echo<"reverb"> | null {
   return instance;
 }
 
+// ---- polling fallback (no Pusher / Reverb key) ----
+
+let countsPoll: ReturnType<typeof setInterval> | undefined;
+
+function pollNow() {
+  if (document.visibilityState !== "visible") return;
+  emit({ type: "resync" });
+  emitCommittee({ type: "resync" });
+  notificationListeners.forEach((l) => l());
+}
+
+/** An open chat screen asks for a quick refresh (5 s) while it is on screen. No-op when live delivery works. */
+export function pollWhileChatOpen(): () => void {
+  if (KEY || typeof window === "undefined") return () => {};
+  const timer = setInterval(pollNow, POLL_OPEN_CHAT_MS);
+  return () => clearInterval(timer);
+}
+
 /** Listens on the member's own channel (menu badge, chat list, notification bell). Call with null on logout. */
 export function startChatLive(userId: number | null): void {
   const name = userId ? `App.Models.User.${userId}` : null;
   if (name === userChannel) return;
   if (!name) return stopChatLive();
+  if (!KEY) {
+    userChannel = name;
+    clearInterval(countsPoll);
+    countsPoll = setInterval(pollNow, POLL_COUNTS_MS);
+    return;
+  }
   const e = chatEcho();
   if (!e) return;
   if (userChannel) e.leave(userChannel);
@@ -174,6 +213,7 @@ export function startChatLive(userId: number | null): void {
 /** Closes the connection (logout / account not approved). */
 export function stopChatLive(): void {
   userChannel = null;
+  clearInterval(countsPoll);
   clearTimeout(graceTimer);
   echo?.disconnect();
   echo = null;

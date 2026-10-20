@@ -18,7 +18,7 @@ import { API_URL, apiDownload, apiFetch, type CommitteeChatMessage } from "@/lib
 import { fill } from "@/lib/auth";
 import { localizeDigits } from "@/lib/format";
 import { chatTime } from "./chat-list";
-import { onCommitteeChatLive } from "./chat-live";
+import { onCommitteeChatLive, pollWhileChatOpen } from "./chat-live";
 import { LiveOffHint } from "./chat-live-hint";
 import { setCommitteeChatUnread } from "./committee-chat-unread";
 
@@ -122,8 +122,10 @@ function CommitteeChat() {
       }
     };
     document.addEventListener("visibilitychange", onVisible);
+    const stopPolling = pollWhileChatOpen();
     return () => {
       off();
+      stopPolling();
       document.removeEventListener("visibilitychange", onVisible);
     };
   }, [me, ready]);

@@ -2,6 +2,8 @@
 
 Templates: `backend/.env.production.example`, `frontend/.env.production.example` (placeholders only).
 
+> **cPanel shared hosting (Phase 14a): follow `docs/DEPLOYMENT_CPANEL.md`.** There no long-running process is allowed, so chat uses Pusher Channels (or polling), and the queue / scheduler run from two cPanel cron jobs. The checklist below is for a VPS / own server (Reverb, queue worker, Next.js behind a proxy).
+
 ## Content-Security-Policy — why `'unsafe-inline'` for scripts stays (Phase 13a review)
 
 - Next.js puts small inline `<script>` tags in every page (hydration data, router bootstrap). Removing `'unsafe-inline'` needs either a **nonce** or **hashes**.
