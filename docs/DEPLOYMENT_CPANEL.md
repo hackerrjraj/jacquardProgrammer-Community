@@ -106,6 +106,30 @@ Open https://api.sacomputer.com.bd/api/ping (or any API address) — you should 
 
 > The site address of the API is baked into the frontend zip when `deploy-package.bat` runs (from `frontend\.env.production`). If you ever change it, make a new zip.
 
+### Updating the live frontend (build on your computer → GitHub → server)
+
+The server cannot run `next build` (thread limits), but it can run Node. So the build is made on your computer and published to a GitHub branch called **`deploy-frontend`** (it holds only the ready-to-run site: no source code, no `.env`, no secrets).
+
+**On your computer**
+1. Check `frontend\.env.production` (API address, and the Pusher key/cluster if you use Pusher).
+2. Double-click **`deploy-frontend.bat`**. It builds in a separate folder (your local site is not touched), assembles the ready-to-run folder `deploy\frontend-branch`, and publishes it to the `deploy-frontend` branch. If a GitHub login window opens, sign in there.
+   - Want to test first? Run `deploy-frontend.bat nopush`, then in `deploy\frontend-branch` run `node app.js` (set `PORT=3999` first) and open http://localhost:3999.
+
+**On the server (cPanel → Terminal), first time**
+```
+cd ~/jpphaf
+git clone --branch deploy-frontend --single-branch https://github.com/hackerrjraj/jacquardProgrammer-Community.git frontend
+```
+Then create the Node.js application (Step 7, point 3) with Application root `jpphaf/frontend`, startup file `app.js`.
+
+**On the server, every update**
+```
+cd ~/jpphaf/frontend
+git fetch origin deploy-frontend
+git reset --hard origin/deploy-frontend
+```
+Then cPanel → Application Manager → **Restart**. (The branch is rewritten on every publish, so use `reset --hard`, not `pull`.)
+
 ## 8. Cron jobs (the "timer" that replaces background programs)
 
 cPanel → **Cron Jobs** → add these two, each set to **Once Per Minute** (`* * * * *`):
