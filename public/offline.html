@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#021d30" />
+    <title>অফলাইন · Offline — JPPHAF</title>
+    <!-- Shown by the service worker (public/sw.js) when a page cannot load without internet. -->
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+        background: #f4f8fb;
+        color: #0b1f33;
+        font-family: "Hind Siliguri", "Noto Sans Bengali", "Segoe UI", system-ui, sans-serif;
+      }
+      .card {
+        width: 100%;
+        max-width: 420px;
+        background: #fff;
+        border: 1px solid #e8ecf1;
+        border-radius: 16px;
+        padding: 28px 24px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(2, 29, 48, 0.08);
+      }
+      .badge {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, #00aebb, #14b8a6);
+        color: #fff;
+        font: 700 11px/1 "Segoe UI", system-ui, sans-serif;
+      }
+      h1 { margin: 0 0 6px; font-size: 1.35rem; }
+      p { margin: 0 0 4px; color: #4b5868; line-height: 1.6; }
+      .en { margin-top: 18px; padding-top: 16px; border-top: 1px solid #e8ecf1; font-family: "Segoe UI", system-ui, sans-serif; }
+      .en h1 { font-size: 1.15rem; }
+      button {
+        margin-top: 20px;
+        border: 0;
+        border-radius: 999px;
+        padding: 10px 22px;
+        background: linear-gradient(90deg, #00aebb, #14b8a6);
+        color: #fff;
+        font: 600 0.95rem/1.2 inherit;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="badge" aria-hidden="true">JPPHAF</div>
+      <h1>আপনি অফলাইনে আছেন</h1>
+      <p>ইন্টারনেট সংযোগ নেই। সংযোগ ফিরে এলে আবার চেষ্টা করুন।</p>
+      <div class="en" lang="en">
+        <h1>You are offline</h1>
+        <p>There is no internet connection. Please try again when you are back online.</p>
+      </div>
+      <button type="button" onclick="location.reload()">আবার চেষ্টা করুন · Try again</button>
+    </main>
+  </body>
+</html>

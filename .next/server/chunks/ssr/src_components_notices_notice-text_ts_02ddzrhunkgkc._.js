@@ -1,0 +1,3 @@
+module.exports=[75232,a=>{"use strict";a.s(["T",0,1e4,"a",0,5242880,"y",0,["application/pdf","image/jpeg","image/png","image/webp"],"J",0,200,"N",0,function(a,b=180){let c=a.replace(/\s+/g," ").trim();return c.length>b?`${c.slice(0,b).trimEnd()}…`:c},"r",0,function(a,b){return a?new Intl.DateTimeFormat("bn"===b?"bn-BD":"en-GB",{dateStyle:"medium",timeStyle:"short",timeZone:"Asia/Dhaka"}).format(new Date(a)):""},"I",0,function(a,b){return"en"===b&&a.body_en||a.body_bn},"p",0,function(a,b){return"en"===b&&a.title_en||a.title_bn}])}];
+
+//# sourceMappingURL=src_components_notices_notice-text_ts_02ddzrhunkgkc._.js.map

@@ -1,0 +1,21 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/src/app/(dashboard)/dashboard/gallery/page": [
+      "static/media/1f95d4beca86b0f6-s.p.0nu0d1-zq0f7n.woff2",
+      "static/media/0b1792555a6d440e-s.p.0mbba7e7fye4a.woff2",
+      "static/media/34478e929f11203a-s.p.43mqagctl8tum.woff2",
+      "static/media/fddc8784efb0488f-s.p.2115tu4m4whjv.woff2",
+      "static/media/d62a86ea65eb628c-s.p.3eswb6t44uyhi.woff2",
+      "static/media/9edc04d9bd7b92a1-s.p.2grpegx_myr9g.woff2",
+      "static/media/7ca7a04daf1e7f98-s.p.2ih2w5qn4g81_.woff2",
+      "static/media/463098014298bfba-s.p.3qwca9tgzuj27.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.2o7m9ogm38dql.woff2",
+      "static/media/e2334d715941921e-s.p.3o_v2fun1jzxk.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.3bh2vc0w-r-ll.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

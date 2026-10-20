@@ -1,0 +1,35 @@
+{
+  "node": {
+    "807a0bdc6839e43bfc54396cbf400394a25591b1ad": {
+      "workers": {
+        "app/(dashboard)/dashboard/site-content/page": {
+          "moduleId": 48305,
+          "async": false
+        }
+      },
+      "exportedName": "$$RSC_SERVER_CACHE_0",
+      "filename": "src/i18n/server.ts"
+    },
+    "80931887a7174d43edc4d5d8ed3ead5d936c5e30e6": {
+      "workers": {
+        "app/(dashboard)/dashboard/site-content/page": {
+          "moduleId": 48305,
+          "async": false
+        }
+      },
+      "exportedName": "$$RSC_SERVER_CACHE_0",
+      "filename": "src/lib/site-images.ts"
+    },
+    "00325b92f0d3e8a1a7f47eb4b4cacb5c2d66391804": {
+      "workers": {
+        "app/(dashboard)/dashboard/site-content/page": {
+          "moduleId": 48305,
+          "async": false
+        }
+      },
+      "exportedName": "revalidateSiteContent",
+      "filename": "src/lib/revalidate-site-content.ts"
+    }
+  },
+  "edge": {}
+}

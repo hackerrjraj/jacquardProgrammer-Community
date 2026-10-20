@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "headers": {
+    "link": "</_next/static/media/0b1792555a6d440e-s.p.0mbba7e7fye4a.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/1f95d4beca86b0f6-s.p.0nu0d1-zq0f7n.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/34478e929f11203a-s.p.43mqagctl8tum.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/463098014298bfba-s.p.3qwca9tgzuj27.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/47fe1b7cd6e6ed85-s.p.3bh2vc0w-r-ll.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/7ca7a04daf1e7f98-s.p.2ih2w5qn4g81_.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/8e6fa89aa22d24ec-s.p.2o7m9ogm38dql.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/9edc04d9bd7b92a1-s.p.2grpegx_myr9g.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/d62a86ea65eb628c-s.p.3eswb6t44uyhi.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/e2334d715941921e-s.p.3o_v2fun1jzxk.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/fddc8784efb0488f-s.p.2115tu4m4whjv.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/chunks/0qvfe-rmtw465.css>; rel=preload; as=\"style\", </_next/static/chunks/1k9qlfnxi-1gs.css>; rel=preload; as=\"style\"",
+    "x-nextjs-stale-time": "30",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(dashboard)/layout,_N_T_/(dashboard)/dashboard/layout,_N_T_/(dashboard)/dashboard/chat/layout,_N_T_/(dashboard)/dashboard/chat/page,_N_T_/dashboard/chat,site-content"
+  },
+  "postponed": "2410:[0,{\"nextSegmentId\":0,\"rootFormatContext\":{\"insertionMode\":0,\"selectedValue\":null,\"tagScope\":0,\"viewTransition\":null},\"progressiveChunkSize\":12800,\"resumableState\":{\"idPrefix\":\"\",\"nextFormID\":0,\"streamingFormat\":0,\"bootstrapScriptContent\":\"(globalThis[\\\"TURBOPACK\\\"] || (globalThis[\\\"TURBOPACK\\\"] = [])).push({\\\"otherChunks\\\":[\\\"static/chunks/0om590q-tq0l9.js\\\",\\\"static/chunks/3oou8raeyuv9d.js\\\",\\\"static/chunks/2-aubugw8unjj.js\\\",\\\"static/chunks/14b-6yb039s34.js\\\"],\\\"runtimeModuleIds\\\":[94553]});\",\"bootstrapScripts\":[{\"src\":\"/_next/static/chunks/0om590q-tq0l9.js\"}],\"instructions\":0,\"hasBody\":false,\"hasHtml\":false,\"unknownResources\":{\"font\":{\"/_next/static/media/0b1792555a6d440e-s.p.0mbba7e7fye4a.woff2\":[],\"/_next/static/media/1f95d4beca86b0f6-s.p.0nu0d1-zq0f7n.woff2\":[],\"/_next/static/media/34478e929f11203a-s.p.43mqagctl8tum.woff2\":[],\"/_next/static/media/463098014298bfba-s.p.3qwca9tgzuj27.woff2\":[],\"/_next/static/media/47fe1b7cd6e6ed85-s.p.3bh2vc0w-r-ll.woff2\":[],\"/_next/static/media/7ca7a04daf1e7f98-s.p.2ih2w5qn4g81_.woff2\":[],\"/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2\":[],\"/_next/static/media/8e6fa89aa22d24ec-s.p.2o7m9ogm38dql.woff2\":[],\"/_next/static/media/9edc04d9bd7b92a1-s.p.2grpegx_myr9g.woff2\":[],\"/_next/static/media/d62a86ea65eb628c-s.p.3eswb6t44uyhi.woff2\":[],\"/_next/static/media/e2334d715941921e-s.p.3o_v2fun1jzxk.woff2\":[],\"/_next/static/media/fddc8784efb0488f-s.p.2115tu4m4whjv.woff2\":[]}},\"dnsResources\":{},\"connectResources\":{\"default\":{},\"anonymous\":{},\"credentials\":{}},\"imageResources\":{},\"styleResources\":{\"/_next/static/chunks/0qvfe-rmtw465.css\":[],\"/_next/static/chunks/1k9qlfnxi-1gs.css\":[]},\"scriptResources\":{},\"moduleUnknownResources\":{},\"moduleScriptResources\":{}},\"replayNodes\":[[\"sl\",0,[[\"Context\",0,[[\"Context\",0,[[\"ServerInsertedHTMLProvider\",0,[[\"Context\",0,[[\"io\",0,[[\"aV\",0,[[\"az\",0,[[\"aq\",0,[[\"is\",0,[[\"Fragment\",0,[[\"Context\",2,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"aV\",0,[[\"az\",0,[[\"aq\",0,[[\"ai\",0,[[\"aa\",0,[[\"ii\",\"/!KGRhc2hib2FyZCk/dashboard/chat/__PAGE__/_head\",[[\"Fragment\",\"h\",[[\"__next_metadata_boundary__\",2,[[\"div\",0,[[\"Suspense\",0,[],0,[\"Suspense Fallback\",0,[],null],0]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],\"replaySlots\":-1}]eJwdj8tugzAQRf9l1m4FMWBAyiJNs2jVR1p1VWAxsqcECWxkJhEI+d8rsrs60n2tMLHzBOUKf8T6AuUaBGjUlzurasijQsZ5rlDFKjGJJKMTk5qcjCQ0qSlkplOSEWU1iKoRVQ2L13lx/Ln+zmPff51P/JZarqFptkiy7JdN3LC/EpTw/uy619Nhfmnd/Gm5OLb7PQhgbCcoK5g6pgftLJNlaARMjD1BKSMB3A00MQ4jlLEqdmmUJ1LJXfKoVJYJoHnstmsyiyIBnm7Ydwb5bg4bQPPtHJ/R4/CBA211TQgCyGq/jEzmyV2tOfhtyBpC+AeFZGBq",
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGRhc2hib2FyZCk/dashboard/chat/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 96,
+                "slots": {
+                  "children": {
+                    "hints": 160,
+                    "slots": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/63be618ba7e33c5476b3e6c8b3cef470c9e38eb318e4f2bbe1144e35ed9121ec/$/dashboard/chat",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/(dashboard)/dashboard/chat/page"
+    },
+    "isFallback": false
+  }
+}

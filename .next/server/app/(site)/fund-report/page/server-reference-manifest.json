@@ -1,0 +1,35 @@
+{
+  "node": {
+    "807a0bdc6839e43bfc54396cbf400394a25591b1ad": {
+      "workers": {
+        "app/(site)/fund-report/page": {
+          "moduleId": 52797,
+          "async": false
+        }
+      },
+      "exportedName": "$$RSC_SERVER_CACHE_0",
+      "filename": "src/i18n/server.ts"
+    },
+    "80931887a7174d43edc4d5d8ed3ead5d936c5e30e6": {
+      "workers": {
+        "app/(site)/fund-report/page": {
+          "moduleId": 52797,
+          "async": false
+        }
+      },
+      "exportedName": "$$RSC_SERVER_CACHE_0",
+      "filename": "src/lib/site-images.ts"
+    },
+    "c025b25c0e8f0d6e25acaa7b9fbe591c6c92d80bff": {
+      "workers": {
+        "app/(site)/fund-report/page": {
+          "moduleId": 52797,
+          "async": false
+        }
+      },
+      "exportedName": "$$RSC_SERVER_CACHE_0",
+      "filename": "src/components/layout/site-contact.tsx"
+    }
+  },
+  "edge": {}
+}

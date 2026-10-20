@@ -1,0 +1,37 @@
+{
+  "status": 404,
+  "headers": {
+    "link": "</_next/static/chunks/0qvfe-rmtw465.css>; rel=preload; as=\"style\", </_next/static/chunks/1k9qlfnxi-1gs.css>; rel=preload; as=\"style\"",
+    "x-nextjs-stale-time": "30",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/_not-found/layout,_N_T_/_not-found/page,_N_T_/_not-found,site-content"
+  },
+  "postponed": "1598:[0,{\"nextSegmentId\":0,\"rootFormatContext\":{\"insertionMode\":0,\"selectedValue\":null,\"tagScope\":0,\"viewTransition\":null},\"progressiveChunkSize\":12800,\"resumableState\":{\"idPrefix\":\"\",\"nextFormID\":0,\"streamingFormat\":0,\"bootstrapScriptContent\":\"(globalThis[\\\"TURBOPACK\\\"] || (globalThis[\\\"TURBOPACK\\\"] = [])).push({\\\"otherChunks\\\":[\\\"static/chunks/0om590q-tq0l9.js\\\",\\\"static/chunks/3oou8raeyuv9d.js\\\",\\\"static/chunks/2-aubugw8unjj.js\\\",\\\"static/chunks/14b-6yb039s34.js\\\"],\\\"runtimeModuleIds\\\":[94553]});\",\"bootstrapScripts\":[{\"src\":\"/_next/static/chunks/0om590q-tq0l9.js\"}],\"instructions\":0,\"hasBody\":false,\"hasHtml\":false,\"unknownResources\":{\"font\":{}},\"dnsResources\":{},\"connectResources\":{\"default\":{},\"anonymous\":{},\"credentials\":{}},\"imageResources\":{},\"styleResources\":{\"/_next/static/chunks/0qvfe-rmtw465.css\":[],\"/_next/static/chunks/1k9qlfnxi-1gs.css\":[]},\"scriptResources\":{},\"moduleUnknownResources\":{},\"moduleScriptResources\":{}},\"replayNodes\":[[\"sl\",0,[[\"Context\",0,[[\"Context\",0,[[\"ServerInsertedHTMLProvider\",0,[[\"Context\",0,[[\"io\",0,[[\"aV\",0,[[\"az\",0,[[\"aq\",0,[[\"is\",0,[[\"Fragment\",0,[[\"Context\",2,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"aV\",0,[[\"az\",0,[[\"aq\",0,[[\"ai\",0,[[\"aa\",0,[[\"ii\",\"/_not-found/__PAGE__/_head\",[[\"Fragment\",\"h\",[[\"__next_metadata_boundary__\",2,[[\"div\",0,[[\"Suspense\",0,[],0,[\"Suspense Fallback\",0,[],null],0]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],\"replaySlots\":-1}]eJxVj81ugzAQhN9lz25FYsCAlEOacmjVnzTqqcDBsreJJbCRWSIi5HevSHtobqP5NKOZGQZyHqGY4RtJnaCYAwMl1enqVTVkUc5XWSakWIlYxxy1inWiM9QcpU50zlOVII8wrYFVDatquHiV5bvP8Wvq2/ZjX9JLYqmGplkq0ZK/LOIs2xGhgNdHZ57L7fR0dNO7pXx33GyAAcnjAEUFgyG8U84SWoKGwUCyRSh4xIBMhwPJrodiJfJ1EmUxF3wd3wuRpgxw6s1yjadRxMDjWbZGS7qGA4OTHMqpb40ydPjHyI94A8u/ml/gUeqDc7SXXnZvssNlZBMCA7TKX3pC/eBGq7d+mT+HEH4ABSN0qA==",
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/_not-found/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 160,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/41da0ef926a63354a29f601d8e8d0a5951196c45ebcd28b7d4708fb7f56f3bf1/$/_not-found",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/_not-found/page"
+    },
+    "isFallback": false
+  }
+}

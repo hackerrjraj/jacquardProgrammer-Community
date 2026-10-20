@@ -1,0 +1,25 @@
+{
+  "node": {
+    "807a0bdc6839e43bfc54396cbf400394a25591b1ad": {
+      "workers": {
+        "app/(dashboard)/dashboard/registration-terms/page": {
+          "moduleId": 95278,
+          "async": false
+        }
+      },
+      "exportedName": "$$RSC_SERVER_CACHE_0",
+      "filename": "src/i18n/server.ts"
+    },
+    "80931887a7174d43edc4d5d8ed3ead5d936c5e30e6": {
+      "workers": {
+        "app/(dashboard)/dashboard/registration-terms/page": {
+          "moduleId": 95278,
+          "async": false
+        }
+      },
+      "exportedName": "$$RSC_SERVER_CACHE_0",
+      "filename": "src/lib/site-images.ts"
+    }
+  },
+  "edge": {}
+}
