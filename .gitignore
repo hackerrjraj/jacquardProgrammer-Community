@@ -1,0 +1,51 @@
+# Secrets / env (keep only *.env.example)
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+!.env.production.example
+!*.env.production.example
+
+# Root database folder: portable MySQL, data, logs, credentials (keep scripts/templates)
+/database/data/
+/database/mysql/
+/database/backups/
+/database/*.log
+/database/my.ini
+/database/db-credentials.txt
+/database/*.pid
+
+# Backups and dumps
+/backups/
+*.sql
+*.zip
+*.sql.gz
+
+# Dependencies / build output
+backend/vendor/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/tsconfig.tsbuildinfo
+backend/.phpunit.result.cache
+
+# Laravel runtime files
+backend/storage/app/public/*
+!backend/storage/app/public/.gitignore
+backend/storage/app/private/*
+!backend/storage/app/private/.gitignore
+backend/storage/logs/*
+!backend/storage/logs/.gitignore
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/storage/framework/testing/*
+!backend/storage/framework/**/.gitignore
+backend/bootstrap/cache/*.php
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

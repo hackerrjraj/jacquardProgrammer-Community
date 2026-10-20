@@ -1,0 +1,6 @@
+{
+    "The given data was invalid.": "দেওয়া তথ্য সঠিক নয়।",
+    "(and :count more error)": "(এবং আরও :count টি ত্রুটি)",
+    "(and :count more errors)": "(এবং আরও :count টি ত্রুটি)",
+    "Unauthenticated.": "অনুগ্রহ করে আগে লগইন করুন।"
+}
